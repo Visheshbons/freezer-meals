@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/head", { title: "Allergen Info | FreezerMeals", description: "See how FreezerMeals labels allergens and handles dietary needs for fresh-frozen meals." }) %>
+<body>
+  <%- include("partials/navbar") %>
+
+  <main class="page">
+    <section class="hero slim">
+      <div>
+        <div class="pill">Allergen info</div>
+        <h1>Clear labels, careful prep.</h1>
+        <p class="tagline">We’re a shared kitchen run by three teen founders. Here’s exactly how we label allergens, reduce cross-contact, and help you choose confidently.</p>
+        <div style="margin-top: 20px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="/menu">View labeled menu</a>
+          <a class="btn btn-ghost" href="/contact">Ask a question</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://placehold.co/640x360/png" alt="Allergen labels on packaged meals" />
+        <div class="badge">Label-first</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>How we label</h2>
+        <p class="section-lead">Every meal card and package includes allergen tags and reheating instructions.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Primary tags</h3>
+          <p class="muted">Dairy, Gluten/Wheat, Eggs, Soy, Peanuts, Tree Nuts, Fish, Shellfish, Sesame, and Spice Level.</p>
+        </div>
+        <div class="card">
+          <h3>Prep notes</h3>
+          <p class="muted">Sauce on the side? Cheese packet? We call it out so you can omit if needed.</p>
+        </div>
+        <div class="card">
+          <h3>Heating guidance</h3>
+          <p class="muted">Per-dish directions (stovetop/oven/microwave) plus internal temp targets for safety.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Kitchen practices</h2>
+        <p class="section-lead">We operate a shared facility. Cross-contact is possible, but we minimize it with clear routines.</p>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Dedicated tooling where possible</h3>
+          <p class="muted">Colored boards/utensils for common allergens; sanitize-and-swap cycles between batches.</p>
+        </div>
+        <div class="card">
+          <h3>Batching & sequencing</h3>
+          <p class="muted">We schedule allergen-light items before higher-risk batches and finish with full clean-downs.</p>
+        </div>
+        <div class="card">
+          <h3>Labeling discipline</h3>
+          <p class="muted">Every tray and pack is tagged at fill time; QA checks before freezing and boxing.</p>
+        </div>
+        <div class="card">
+          <h3>Shared kitchen disclaimer</h3>
+          <p class="muted">If you have severe allergies, contact us before ordering so we can advise candidly.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <div class="cta">
+        <div>
+          <h2>Common allergen notes</h2>
+          <p class="section-lead">Look for these tags on the menu and packaging.</p>
+          <ul class="muted" style="padding-left:18px; margin-top:0;">
+            <li>Dairy: cheese, cream, butter; swaps sometimes available.</li>
+            <li>Gluten/Wheat: pastas, breads, some sauces; GF swaps where noted.</li>
+            <li>Nuts/Peanuts: rarely used; called out when present.</li>
+            <li>Eggs/Soy/Sesame: tagged when in sauces or toppings.</li>
+            <li>Fish/Shellfish: clearly marked on pescatarian dishes.</li>
+          </ul>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;">
+            <a class="btn btn-primary" href="/menu">Browse with filters</a>
+            <a class="btn btn-ghost" href="/contact">Need a swap? Ask us</a>
+          </div>
+        </div>
+        <div>
+          <img src="https://placehold.co/520x320/png" alt="Allergen icons" style="width:100%; border-radius: var(--radius); border:1px solid var(--border); box-shadow: var(--shadow);" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Heating & safety</h2>
+        <p class="section-lead">Keep quality high and risk low with simple steps.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Store frozen</h3>
+          <p class="muted">Keep meals frozen until ready to defrost. Best within 8 weeks.</p>
+        </div>
+        <div class="card">
+          <h3>Defrost smart</h3>
+          <p class="muted">Fridge 12–18 hours; or cold-water bath ~45 minutes (sealed).</p>
+        </div>
+        <div class="card">
+          <h3>Heat thoroughly</h3>
+          <p class="muted">Target 165°F internal temp. Stir/rotate midway for even heating.</p>
+        </div>
+      </div>
+      <div style="margin-top: 18px;">
+        <a class="btn btn-ghost" href="/how">See the full process →</a>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <div class="cta">
+        <div>
+          <h2>Questions or severe allergies?</h2>
+          <p class="section-lead">Message us before you order. We’ll be transparent about fit and options.</p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="/contact">Contact the team</a>
+            <a class="btn btn-ghost" href="mailto:hello@freezermeals.com">Email: hello@freezermeals.com</a>
+          </div>
+        </div>
+        <div>
+          <img src="https://placehold.co/520x320/jpg" alt="Customer support team" style="width:100%; border-radius: var(--radius); border:1px solid var(--border); box-shadow: var(--shadow);" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel">
+        <h2>Ready to choose with confidence?</h2>
+        <p class="section-lead">Filter by allergen tags on the menu or ask us for a curated box.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="/menu">Browse menu</a>
+          <a class="btn btn-ghost" href="/order">Build a box</a>
+          <a class="btn btn-ghost" href="/newsletter">Get updates</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include("partials/footer") %>
+</body>
+</html>

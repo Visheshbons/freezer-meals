@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/head", { title: "Order | FreezerMeals", description: "Build your freezer-ready meal box—chef-prepped, flash-frozen, and ready to heat." }) %>
+<body>
+  <%- include("partials/navbar") %>
+
+  <main class="page">
+    <section class="hero slim">
+      <div>
+        <div class="pill">Order</div>
+        <h1>Build your freezer box in minutes.</h1>
+        <p class="tagline">Pick your meals, choose delivery, and get fresh-frozen dishes with simple heat-and-eat instructions.</p>
+        <div style="margin-top: 20px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="#box-builder">Start building</a>
+          <a class="btn btn-ghost" href="/menu">Browse menu</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://placehold.co/640x360/png" alt="FreezerMeals box" />
+        <div class="badge">Ready in ~15 min</div>
+      </div>
+    </section>
+
+    <section id="box-builder" class="section panel">
+      <div class="cta">
+        <div>
+          <h2>Your box</h2>
+          <p class="section-lead">Select meals and set your delivery window. We’ll pack, flash-freeze, and deliver.</p>
+          <form class="grid cols-2" style="gap:14px;">
+            <div class="card">
+              <h3>Box size</h3>
+              <p class="muted">Choose how many meals you want.</p>
+              <div style="display:grid; gap:8px;">
+                <label><input type="radio" name="boxSize" value="6" checked /> 6 meals</label>
+                <label><input type="radio" name="boxSize" value="10" /> 10 meals</label>
+                <label><input type="radio" name="boxSize" value="14" /> 14 meals</label>
+              </div>
+            </div>
+            <div class="card">
+              <h3>Delivery window</h3>
+              <p class="muted">Pick a day that works for you.</p>
+              <select name="delivery" style="width:100%; padding:12px; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,0.03); color:var(--text);">
+                <option>Tuesday (10am–2pm)</option>
+                <option>Thursday (4pm–8pm)</option>
+                <option>Saturday (9am–1pm)</option>
+              </select>
+            </div>
+            <div class="card">
+              <h3>Special notes</h3>
+              <p class="muted">Allergens, gate codes, drop-off instructions.</p>
+              <textarea name="notes" rows="4" style="width:100%; padding:12px; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,0.03); color:var(--text);" placeholder="e.g., ring doorbell, peanut-free, leave with neighbor if not home"></textarea>
+            </div>
+            <div class="card">
+              <h3>Checkout</h3>
+              <p class="muted">We’ll confirm totals before finalizing.</p>
+              <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <button class="btn btn-primary" type="submit">Save my box</button>
+                <a class="btn btn-ghost" href="/contact">Questions? Contact us</a>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div>
+          <img src="https://placehold.co/520x320/jpg" alt="Packaging and delivery" style="width:100%; border-radius: var(--radius); border:1px solid var(--border); box-shadow: var(--shadow);" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Popular picks</h2>
+        <p class="section-lead">Add these customer favorites to your box.</p>
+      </div>
+      <div class="grid cols-3">
+        <article class="card">
+          <img src="https://placehold.co/420x260/jpg" alt="Smoky chipotle chicken" />
+          <h3>Smoky Chipotle Chicken</h3>
+          <p class="muted">Roasted sweet potatoes, charred corn, lime crema.</p>
+          <a class="btn btn-ghost" href="/menu">Add to box →</a>
+        </article>
+        <article class="card">
+          <img src="https://placehold.co/420x260/jpg" alt="Pesto pasta bake" />
+          <h3>Veggie Pesto Pasta Bake</h3>
+          <p class="muted">Zucchini, blistered tomatoes, mozzarella, basil pesto.</p>
+          <a class="btn btn-ghost" href="/menu">Add to box →</a>
+        </article>
+        <article class="card">
+          <img src="https://placehold.co/420x260/jpg" alt="Honey garlic salmon" />
+          <h3>Honey-Garlic Salmon</h3>
+          <p class="muted">Sesame greens, wild rice, citrus herb butter.</p>
+          <a class="btn btn-ghost" href="/menu">Add to box →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <div class="cta">
+        <div>
+          <h2>Transparent pricing</h2>
+          <p class="section-lead">No hidden fees. Packaging and cold-chain handling included.</p>
+          <ul class="muted" style="padding-left:18px; margin-top:0;">
+            <li>Meals: from $10–$13 each depending on size and protein.</li>
+            <li>Bundles: family packs from $45.</li>
+            <li>Delivery: free over $75, otherwise $8 flat.</li>
+          </ul>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;">
+            <a class="btn btn-primary" href="/order#box-builder">Build my box</a>
+            <a class="btn btn-ghost" href="/faq">Delivery FAQs</a>
+          </div>
+        </div>
+        <div>
+          <img src="https://placehold.co/520x320/png" alt="Price breakdown graphic" style="width:100%; border-radius: var(--radius); border:1px solid var(--border); box-shadow: var(--shadow);" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Heat & eat in three steps</h2>
+        <p class="section-lead">Defrost overnight, heat in ~15 minutes, enjoy.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card step">
+          <div class="step-number">1</div>
+          <div>
+            <h3>Defrost</h3>
+            <p class="muted">Move meals to the fridge 12–18 hours before eating.</p>
+          </div>
+        </div>
+        <div class="card step">
+          <div class="step-number">2</div>
+          <div>
+            <h3>Heat</h3>
+            <p class="muted">Stovetop, oven, or microwave—follow the label on each dish.</p>
+          </div>
+        </div>
+        <div class="card step">
+          <div class="step-number">3</div>
+          <div>
+            <h3>Enjoy</h3>
+            <p class="muted">Finish with fresh herbs or citrus for a chef-style touch.</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 18px;">
+        <a class="btn btn-ghost" href="/how">See the full process →</a>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <div class="cta">
+        <div>
+          <h2>Need help choosing?</h2>
+          <p class="section-lead">Tell us your preferences and we’ll draft a starter box for you.</p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="/contact">Talk to us</a>
+            <a class="btn btn-ghost" href="/reviews">See customer favorites</a>
+          </div>
+        </div>
+        <div>
+          <img src="https://placehold.co/520x320/jpg" alt="Customer support" style="width:100%; border-radius: var(--radius); border:1px solid var(--border); box-shadow: var(--shadow);" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include("partials/footer") %>
+</body>
+</html>

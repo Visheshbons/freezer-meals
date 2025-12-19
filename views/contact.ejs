@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/head", { title: "Contact | FreezerMeals", description: "Get in touch with the FreezerMeals team for orders, support, and partnerships." }) %>
+<body>
+  <%- include("partials/navbar") %>
+
+  <main class="page">
+    <section class="hero slim">
+      <div>
+        <div class="pill">Contact</div>
+        <h1>We’re here to help.</h1>
+        <p class="tagline">Questions about delivery, allergens, or custom boxes? Reach out and we’ll respond quickly.</p>
+        <div style="margin-top: 20px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="#contact-form">Send a message</a>
+          <a class="btn btn-ghost" href="/faq">View FAQs</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://placehold.co/640x360/png" alt="Customer support" />
+        <div class="badge">Friendly support</div>
+      </div>
+    </section>
+
+    <section id="contact-form" class="section">
+      <div class="panel">
+        <h2>Message us</h2>
+        <p class="section-lead">Tell us what you need—orders, delivery details, dietary requests, partnerships, or media.</p>
+        <form class="grid cols-2" style="gap:14px;" action="/contact" method="post">
+          <div class="card">
+            <h3>Your info</h3>
+            <div style="display:grid; gap:10px;">
+              <input type="text" name="name" placeholder="Your name" required style="padding:12px; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,0.03); color:var(--text);" />
+              <input type="email" name="email" placeholder="Email" required style="padding:12px; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,0.03); color:var(--text);" />
+              <input type="text" name="phone" placeholder="Phone (optional)" style="padding:12px; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,0.03); color:var(--text);" />
+            </div>
+          </div>
+          <div class="card">
+            <h3>Topic</h3>
+            <div style="display:grid; gap:10px;">
+              <select name="topic" style="padding:12px; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,0.03); color:var(--text);">
+                <option>Order help</option>
+                <option>Delivery & logistics</option>
+                <option>Allergens & dietary</option>
+                <option>Partnerships</option>
+                <option>Press & media</option>
+                <option>Other</option>
+              </select>
+              <textarea name="message" rows="5" placeholder="How can we help?" required style="padding:12px; border-radius:12px; border:1px solid var(--border); background:rgba(255,255,255,0.03); color:var(--text);"></textarea>
+            </div>
+          </div>
+          <div class="card" style="grid-column: span 2;">
+            <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+              <button class="btn btn-primary" type="submit">Send message</button>
+              <a class="btn btn-ghost" href="/faq">Check FAQs</a>
+              <span class="muted">Typical response: under 24 hours.</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Quick answers</h2>
+        <p class="section-lead">The fastest way to solve common questions.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Delivery windows</h3>
+          <p class="muted">Tue 10–2, Thu 4–8, Sat 9–1. Free over $75; otherwise $8 flat.</p>
+          <a class="btn btn-ghost" href="/faq">See delivery FAQ →</a>
+        </div>
+        <div class="card">
+          <h3>Allergens</h3>
+          <p class="muted">Each meal is labeled for dairy, gluten, nuts, and spice level.</p>
+          <a class="btn btn-ghost" href="/allergens">View allergen info →</a>
+        </div>
+        <div class="card">
+          <h3>Custom boxes</h3>
+          <p class="muted">Tell us your preferences and we’ll propose a starter box.</p>
+          <a class="btn btn-ghost" href="/order">Build a box →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <div class="cta">
+        <div>
+          <h2>Talk to a human</h2>
+          <p class="section-lead">We’re a small team—your message goes straight to the founders.</p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="mailto:hello@freezermeals.com">Email: hello@freezermeals.com</a>
+            <a class="btn btn-ghost" href="/founders">Meet the founders</a>
+            <a class="btn btn-ghost" href="/newsletter">Join newsletter</a>
+          </div>
+        </div>
+        <div>
+          <img src="https://placehold.co/520x320/jpg" alt="Support team" style="width:100%; border-radius: var(--radius); border:1px solid var(--border); box-shadow: var(--shadow);" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include("partials/footer") %>
+</body>
+</html>

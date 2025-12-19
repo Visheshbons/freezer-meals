@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/head", { title: "Reviews | FreezerMeals", description: "Hear from FreezerMeals customers about our chef-prepped, fresh-frozen meals." }) %>
+<body>
+  <%- include("partials/navbar") %>
+
+  <main class="page">
+    <section class="hero slim">
+      <div>
+        <div class="pill">Reviews</div>
+        <h1>Loved by busy families, students, and night-shift crews.</h1>
+        <p class="tagline">Real feedback on flavor, convenience, and why fresh-frozen beats takeout on hectic days.</p>
+        <div style="margin-top: 20px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="/order">Build my box</a>
+          <a class="btn btn-ghost" href="/menu">View menu</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://placehold.co/640x360/jpg" alt="Happy customers enjoying meals" />
+        <div class="badge">4.8 ★★★★★</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Top praises</h2>
+        <p class="section-lead">Themes we hear most often: flavor, speed, and clear heating instructions.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card testimonial">
+          <blockquote>“Finally freezer meals that taste like they were cooked today. Kids ask for seconds.”</blockquote>
+          <span class="muted">— A., parent of two</span>
+        </div>
+        <div class="card testimonial">
+          <blockquote>“My exam weeks are saved. Zero dishes, 15 minutes, and I still feel good after.”</blockquote>
+          <span class="muted">— J., college student</span>
+        </div>
+        <div class="card testimonial">
+          <blockquote>“Labeling is so clear. Allergen notes + reheating steps right on the pack.”</blockquote>
+          <span class="muted">— M., night-shift nurse</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <div class="cta">
+        <div>
+          <h2>By the numbers</h2>
+          <p class="section-lead">Consistent scores across taste, convenience, and clarity.</p>
+          <ul class="muted" style="padding-left:18px; margin-top:0;">
+            <li>Taste: 4.8 / 5</li>
+            <li>Convenience: 4.9 / 5</li>
+            <li>Label clarity: 4.9 / 5</li>
+          </ul>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;">
+            <a class="btn btn-primary" href="/order">Start an order</a>
+            <a class="btn btn-ghost" href="/how">See how it works</a>
+          </div>
+        </div>
+        <div>
+          <img src="https://placehold.co/520x320/png" alt="Ratings illustration" style="width:100%; border-radius: var(--radius); border:1px solid var(--border); box-shadow: var(--shadow);" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Recent highlights</h2>
+        <p class="section-lead">Fresh quotes from the past few weeks.</p>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>“Family bundle is a win”</h3>
+          <p class="muted">“Fed all five of us, sides included. Reheated evenly. Better than takeout.”</p>
+          <span class="muted">— R., family of five</span>
+        </div>
+        <div class="card">
+          <h3>“Packaging is on point”</h3>
+          <p class="muted">“No spills, clear allergen notes, and thaw instructions right on top.”</p>
+          <span class="muted">— S., food allergy household</span>
+        </div>
+        <div class="card">
+          <h3>“Late-night lifesaver”</h3>
+          <p class="muted">“Off my shift at 11. Dinner by 11:20. Actually tastes fresh.”</p>
+          <span class="muted">— D., ER nurse</span>
+        </div>
+        <div class="card">
+          <h3>“College-approved”</h3>
+          <p class="muted">“I keep three in the dorm freezer. Way better than campus pizza.”</p>
+          <span class="muted">— K., sophomore</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <div class="cta">
+        <div>
+          <h2>Want to leave a review?</h2>
+          <p class="section-lead">Send your feedback—flavor notes, heating tips, or new dish ideas.</p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="/contact">Share feedback</a>
+            <a class="btn btn-ghost" href="/menu">Try another dish</a>
+          </div>
+        </div>
+        <div>
+          <img src="https://placehold.co/520x320/jpg" alt="Customer writing a review" style="width:100%; border-radius: var(--radius); border:1px solid var(--border); box-shadow: var(--shadow);" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include("partials/footer") %>
+</body>
+</html>

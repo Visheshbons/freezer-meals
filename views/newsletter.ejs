@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/head", { title: "Newsletter | FreezerMeals", description: "Join the FreezerMeals newsletter for new menu drops, freezer tips, and delivery windows." }) %>
+<body>
+  <%- include("partials/navbar") %>
+
+  <main class="page">
+    <section class="hero slim">
+      <div>
+        <div class="pill">Newsletter</div>
+        <h1>Stay ahead of new drops and delivery windows.</h1>
+        <p class="tagline">Get first dibs on seasonal menus, family bundles, freezer tips, and local delivery slots—straight from the three teens behind FreezerMeals.</p>
+        <div style="margin-top: 20px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="#newsletter-form">Sign me up</a>
+          <a class="btn btn-ghost" href="/menu">View menu</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://placehold.co/640x360/png" alt="FreezerMeals newsletter" />
+        <div class="badge">Early access</div>
+      </div>
+    </section>
+
+    <section id="newsletter-form" class="section">
+      <div class="panel">
+        <h2>Join the list</h2>
+        <p class="section-lead">We send 1–2 emails a month. No spam—just launches, tips, and exclusive bundles.</p>
+        <form class="newsletter" action="/newsletter" method="post" style="margin-top:12px;">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Your email address" required />
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+        <div style="margin-top: 12px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-ghost" href="/how">See how it works</a>
+          <a class="btn btn-ghost" href="/order">Build a box</a>
+        </div>
+        <p class="muted" style="margin-top:12px; font-size:0.95rem;">Unsubscribe anytime. We respect your inbox.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>What you’ll get</h2>
+        <p class="section-lead">Short, useful notes—built for busy schedules.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Menu drops</h3>
+          <p class="muted">Seasonal specials, limited runs, and founder picks before they sell out.</p>
+        </div>
+        <div class="card">
+          <h3>Freezer tips</h3>
+          <p class="muted">Defrost hacks, reheating guides, and pairings to keep flavors bright.</p>
+        </div>
+        <div class="card">
+          <h3>Local windows</h3>
+          <p class="muted">Heads-up on delivery slots so you never miss a drop-off.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <div class="cta">
+        <div>
+          <h2>Built by three teens who care about your time.</h2>
+          <p class="section-lead">We cook, flash-freeze, label, and deliver. You heat, eat, and enjoy.</p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="/order">Start an order</a>
+            <a class="btn btn-ghost" href="/founders">Meet the founders</a>
+          </div>
+        </div>
+        <div>
+          <img src="https://placehold.co/520x320/jpg" alt="Founders cooking" style="width:100%; border-radius: var(--radius); border:1px solid var(--border); box-shadow: var(--shadow);" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="panel">
+        <h2>Questions?</h2>
+        <p class="section-lead">We reply quickly about delivery, allergens, or custom boxes.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="/contact">Talk to us</a>
+          <a class="btn btn-ghost" href="/faq">View FAQs</a>
+          <a class="btn btn-ghost" href="/allergens">Allergen info</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include("partials/footer") %>
+</body>
+</html>

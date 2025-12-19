@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/head", { title: "FreezerMeals | Ready-to-Heat Comfort", description: "Chef-prepped, fresh-frozen meals you can simply defrost, heat, and enjoy." }) %>
+<body>
+  <%- include("partials/navbar") %>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="pill">Ready-to-heat comfort meals</div>
+        <h1>Chef-prepped meals, frozen fresh—ready when life gets busy.</h1>
+        <p class="tagline">Founded by three driven teens to make real food effortless. Stock your freezer with wholesome meals you can simply defrost, heat, and enjoy.</p>
+        <div class="stats">
+          <div class="stat">
+            <strong>15+</strong>
+            <span class="muted">Chef-crafted recipes</span>
+          </div>
+          <div class="stat">
+            <strong>15 min</strong>
+            <span class="muted">Heat & eat time</span>
+          </div>
+          <div class="stat">
+            <strong>Fresh-frozen</strong>
+            <span class="muted">Zero compromises</span>
+          </div>
+        </div>
+        <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+          <a class="btn btn-primary" href="/order">Build my box</a>
+          <a class="btn btn-ghost" href="/menu">View menu</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://placehold.co/640x420/png" alt="Freezer meal assortment" />
+        <div class="badge">New: Family Bundle</div>
+      </div>
+    </section>
+
+    <section id="how" class="section">
+      <div class="section-header">
+        <h2>How FreezerMeals works</h2>
+        <p class="section-lead">From freezer to fork in minutes. Thoughtful sourcing, balanced nutrition, and zero kitchen stress.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card step">
+          <div class="step-number">1</div>
+          <div>
+            <h3>Choose your meals</h3>
+            <p class="muted">Pick from rotating menus: hearty mains, nourishing bowls, and family-sized favorites.</p>
+          </div>
+        </div>
+        <div class="card step">
+          <div class="step-number">2</div>
+          <div>
+            <h3>We prep & freeze fresh</h3>
+            <p class="muted">Meals are cooked, flash-frozen to lock in flavor and nutrients, then delivered freezer-ready.</p>
+          </div>
+        </div>
+        <div class="card step">
+          <div class="step-number">3</div>
+          <div>
+            <h3>Heat, eat, enjoy</h3>
+            <p class="muted">Defrost overnight, heat in 15 minutes or less, and enjoy real food without the hassle.</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 18px;">
+        <a class="btn btn-ghost" href="/how">More on our process →</a>
+      </div>
+    </section>
+
+    <section id="menu" class="section">
+      <div class="section-header">
+        <h2>Menu highlights</h2>
+        <p class="section-lead">Balanced proteins, vibrant veggies, and cozy classics crafted for freezer-friendly freshness.</p>
+      </div>
+      <div class="grid cols-3">
+        <article class="card">
+          <img src="https://placehold.co/420x260/jpg" alt="Meal highlight" />
+          <h3>Smoky Chipotle Chicken</h3>
+          <p class="muted">With roasted sweet potatoes, charred corn, and lime crema.</p>
+        </article>
+        <article class="card">
+          <img src="https://placehold.co/420x260/jpg" alt="Meal highlight" />
+          <h3>Veggie Pesto Pasta Bake</h3>
+          <p class="muted">Basil pesto, roasted zucchini, blistered tomatoes, and mozzarella.</p>
+        </article>
+        <article class="card">
+          <img src="https://placehold.co/420x260/jpg" alt="Meal highlight" />
+          <h3>Honey-Garlic Salmon</h3>
+          <p class="muted">Served with sesame greens, wild rice, and citrus herb butter.</p>
+        </article>
+      </div>
+      <div style="margin-top: 18px;">
+        <a class="btn btn-ghost" href="/menu">See full menu →</a>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <div class="cta">
+        <div>
+          <h2>Always ready, always delicious.</h2>
+          <p class="section-lead">Whether it’s weeknight dinners, late study sessions, or quick family meals, FreezerMeals keeps wholesome options on standby.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a class="btn btn-primary" href="/order">Start an order</a>
+            <a class="btn btn-ghost" href="/how">See the process</a>
+          </div>
+        </div>
+        <div>
+          <img src="https://placehold.co/520x320/png" alt="Meal prep process" style="width:100%; border-radius: var(--radius); border:1px solid var(--border); box-shadow: var(--shadow);" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Why customers love us</h2>
+        <p class="section-lead">Consistent quality, honest ingredients, and the convenience you actually need.</p>
+      </div>
+      <div class="grid cols-2">
+        <div class="card testimonial">
+          <blockquote>“Finally, freezer meals that taste like they were made today. Our family nights got way easier.”</blockquote>
+          <span class="muted">— A., busy parent</span>
+        </div>
+        <div class="card testimonial">
+          <blockquote>“I stock up for exam season. Real food, zero dishes, and I still feel good after eating.”</blockquote>
+          <span class="muted">— J., college student</span>
+        </div>
+      </div>
+      <div style="margin-top: 18px;">
+        <a class="btn btn-ghost" href="/reviews">More stories →</a>
+      </div>
+    </section>
+
+    <section id="founders" class="section">
+      <div class="section-header">
+        <h2>Built by three driven teens</h2>
+        <p class="section-lead">FreezerMeals started as a passion project to make comforting, better-for-you meals accessible to everyone.</p>
+      </div>
+      <div class="founders">
+        <div class="card founder">
+          <img src="https://placehold.co/320x200/png" alt="Founder portrait" />
+          <h3>Alex</h3>
+          <p class="muted">Ops & sourcing. Ensures every meal starts with quality ingredients.</p>
+        </div>
+        <div class="card founder">
+          <img src="https://placehold.co/320x200/png" alt="Founder portrait" />
+          <h3>Jamie</h3>
+          <p class="muted">Culinary lead. Crafts flavors that thrive in freezer-friendly form.</p>
+        </div>
+        <div class="card founder">
+          <img src="https://placehold.co/320x200/png" alt="Founder portrait" />
+          <h3>Taylor</h3>
+          <p class="muted">Experience & delivery. Keeps every order smooth, on-time, and frosty-fresh.</p>
+        </div>
+      </div>
+      <div style="margin-top: 18px;">
+        <a class="btn btn-ghost" href="/founders">Meet the founders →</a>
+      </div>
+    </section>
+
+    <section id="cta" class="section panel">
+      <div class="cta">
+        <div>
+          <h2>Ready to fill your freezer?</h2>
+          <p class="section-lead">Tell us what you like, and we’ll recommend a starter box tailored to your schedule.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a class="btn btn-primary" href="/order">Get recommendations</a>
+            <a class="btn btn-ghost" href="/menu">Browse dishes</a>
+          </div>
+        </div>
+        <div>
+          <img src="https://placehold.co/520x320/jpg" alt="Freezer stocked with meals" style="width:100%; border-radius: var(--radius); border:1px solid var(--border); box-shadow: var(--shadow);" />
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter" class="section">
+      <div class="panel">
+        <h2>Stay in the loop</h2>
+        <p class="section-lead">Early access to new dishes, freezer tips, and local delivery windows.</p>
+        <form class="newsletter" action="/newsletter" method="post">
+          <input type="email" name="email" placeholder="Your email address" required />
+          <button class="btn btn-primary" type="submit">Notify me</button>
+        </form>
+        <div style="margin-top: 12px;">
+          <a class="btn btn-ghost" href="/contact">Questions? Contact us →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include("partials/footer") %>
+</body>
+</html>

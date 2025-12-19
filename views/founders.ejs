@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/head", { title: "Our Story | FreezerMeals", description: "Meet the three teen founders behind FreezerMeals and their mission to make real food effortless." }) %>
+<body>
+  <%- include("partials/navbar") %>
+
+  <main class="page">
+    <section class="hero slim">
+      <div>
+        <div class="pill">Our story</div>
+        <h1>Three teens. One mission: make real food effortless.</h1>
+        <p class="tagline">FreezerMeals began with late-night study sessions and a shared frustration: great food shouldn’t take an hour to make. So we built a fresh-frozen kitchen to help everyone eat well on busy days.</p>
+        <div style="margin-top: 20px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn btn-primary" href="/order">Start an order</a>
+          <a class="btn btn-ghost" href="/how">How it works</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://placehold.co/640x360/jpg" alt="FreezerMeals founders together" />
+        <div class="badge">Built in 2024</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>The spark</h2>
+        <p class="section-lead">From school projects to a real kitchen. We tested recipes between exams, iterated on reheating guides, and asked friends to be our first tasters.</p>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Why frozen?</h3>
+          <p class="muted">Flash-freezing locks in flavor and nutrition without preservatives. It lets us cook in batches, reduce waste, and deliver consistently great meals you can reheat in minutes.</p>
+        </div>
+        <div class="card">
+          <h3>Why teens?</h3>
+          <p class="muted">We grew up juggling school, sports, and part-time jobs. We wanted a way to keep eating real food without sacrificing time—or taste.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Meet the founders</h2>
+        <p class="section-lead">Three friends, one shared kitchen, and a lot of taste tests.</p>
+      </div>
+      <div class="founders">
+        <div class="card founder">
+          <img src="https://placehold.co/320x200/png" alt="Founder portrait Alex" />
+          <h3>Alex — Ops & sourcing</h3>
+          <p class="muted">Finds suppliers we trust, keeps the kitchen humming, and ensures every box leaves on time.</p>
+        </div>
+        <div class="card founder">
+          <img src="https://placehold.co/320x200/png" alt="Founder portrait Jamie" />
+          <h3>Jamie — Culinary lead</h3>
+          <p class="muted">Designs freezer-friendly recipes, tests sauces, and writes the reheating playbook for every dish.</p>
+        </div>
+        <div class="card founder">
+          <img src="https://placehold.co/320x200/png" alt="Founder portrait Taylor" />
+          <h3>Taylor — Experience & delivery</h3>
+          <p class="muted">Maps routes, optimizes packaging, and keeps customers in the loop from order to doorstep.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <div class="cta">
+        <div>
+          <h2>What we believe</h2>
+          <p class="section-lead">Food should be honest, easy, and joyful—even on your busiest days.</p>
+          <ul class="muted" style="padding-left:18px; margin-top:0;">
+            <li>Quality first: real ingredients, no shortcuts.</li>
+            <li>Clarity: clear labels, reheating tips, and allergen callouts.</li>
+            <li>Convenience: freezer-stable meals that taste like today.</li>
+          </ul>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:12px;">
+            <a class="btn btn-primary" href="/order">Build my box</a>
+            <a class="btn btn-ghost" href="/reviews">See customer stories</a>
+          </div>
+        </div>
+        <div>
+          <img src="https://placehold.co/520x320/jpg" alt="Team cooking together" style="width:100%; border-radius: var(--radius); border:1px solid var(--border); box-shadow: var(--shadow);" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2>Milestones</h2>
+        <p class="section-lead">From a home kitchen to delivering across town.</p>
+      </div>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Week 1</h3>
+          <p class="muted">First 20 meals sold to friends and family. Lots of feedback, lots of tweaking.</p>
+        </div>
+        <div class="card">
+          <h3>Week 3</h3>
+          <p class="muted">Flash-freeze process dialed in. New labels with heating and allergen details.</p>
+        </div>
+        <div class="card">
+          <h3>Week 6</h3>
+          <p class="muted">Local delivery routes set. Family bundles launch—instant favorite.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section panel">
+      <div class="cta">
+        <div>
+          <h2>Join the journey</h2>
+          <p class="section-lead">Tell us what you want in your freezer. We’ll keep building menus around how you actually live.</p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="/order">Start an order</a>
+            <a class="btn btn-ghost" href="/contact">Talk to us</a>
+            <a class="btn btn-ghost" href="/newsletter">Get updates</a>
+          </div>
+        </div>
+        <div>
+          <img src="https://placehold.co/520x320/png" alt="FreezerMeals box" style="width:100%; border-radius: var(--radius); border:1px solid var(--border); box-shadow: var(--shadow);" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <%- include("partials/footer") %>
+</body>
+</html>
