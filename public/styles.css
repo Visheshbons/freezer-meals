@@ -320,6 +320,16 @@ main {
     min-width: 240px;
 }
 
+.founder-image {
+    width: 320px;
+    height: 240px;
+}
+
+.founder-image-2 {
+    width: 267px;
+    height: 200px;
+}
+
 .cta {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
