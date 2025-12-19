@@ -73,7 +73,7 @@ const data = {
       name: "Zach",
       role: "Useless Fellow",
       bio: "Zach is the useless guy who didn't give me a role to put in the website.",
-      image: "https://placehold.co/320x240/png",
+      image: "/images/Image_20251218_1651544717311805519586647.jpeg",
     },
     {
       name: "Emma",
