@@ -75,7 +75,6 @@ app.get("/contact", (req, res) => res.render("contact", { data }));
 app.get("/reviews", (req, res) => res.render("reviews", { data }));
 app.get("/newsletter", (req, res) => res.render("newsletter", { data }));
 app.get("/faq", (req, res) => res.render("faq", { data }));
-app.get("/allergens", (req, res) => res.render("allergens", { data }));
 
 app.post("/contact", (req, res) => {
   console.log("Contact submission:", req.body);

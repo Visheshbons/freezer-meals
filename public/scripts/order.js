@@ -226,6 +226,22 @@ if (!appEl) {
         if (!res.ok || !data.clientSecret) {
           throw new Error(data.error || "Unable to create payment intent.");
         }
+
+        // Cache summary for promotion by the banner after redirect
+        try {
+          window.localStorage.setItem(
+            "fm_last_order",
+            JSON.stringify({
+              amount,
+              currency: "usd",
+              itemsCount: items.reduce((acc, it) => acc + (it.qty || 0), 0),
+              deliveryWindow: delivery.window || "",
+            }),
+          );
+        } catch (_e) {
+          // ignore storage errors
+        }
+
         clientSecret = data.clientSecret;
         if (!elements) {
           elements = stripe.elements({

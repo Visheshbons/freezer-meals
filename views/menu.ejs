@@ -2,121 +2,105 @@
 <html lang="en">
 <%- include("partials/head", { title: "Menu | FreezerMeals", description: "Explore chef-prepped, fresh-frozen meals ready to heat and enjoy." }) %>
 <body>
-  <%- include("partials/navbar") %>
+    <%- include("partials/navbar") %>
 
-  <main class="page">
-    <section class="hero slim">
-      <div>
-        <div class="pill">Menu</div>
-        <h1>Chef-crafted meals, frozen fresh.</h1>
-        <p class="tagline">Build a box with hearty mains, nourishing bowls, and family-sized favorites—ready in about 15 minutes.</p>
-        <div style="margin-top: 20px; display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="/order">Start an order</a>
-          <a class="btn btn-ghost" href="/how">See how it works</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <img src="https://placehold.co/640x360/jpg" alt="Assorted freezer meals" />
-        <div class="badge">Seasonal picks</div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-header">
-        <h2>Signature Mains</h2>
-        <p class="section-lead">Protein-forward entrées with balanced sides and sauces that reheat beautifully.</p>
-      </div>
-      <div class="grid cols-3">
-        <article class="card">
-          <img src="https://placehold.co/420x260/jpg" alt="Smoky chipotle chicken" />
-          <h3>Smoky Chipotle Chicken</h3>
-          <p class="muted">Charred corn, roasted sweet potatoes, lime crema.</p>
-        </article>
-        <article class="card">
-          <img src="https://placehold.co/420x260/jpg" alt="Honey garlic salmon" />
-          <h3>Honey-Garlic Salmon</h3>
-          <p class="muted">Sesame greens, wild rice, citrus herb butter.</p>
-        </article>
-        <article class="card">
-          <img src="https://placehold.co/420x260/jpg" alt="Herb roasted turkey" />
-          <h3>Herb-Roasted Turkey</h3>
-          <p class="muted">Garlic mash, green beans, cranberry pan jus.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-header">
-        <h2>Comfort Classics</h2>
-        <p class="section-lead">Cozy, freezer-friendly favorites with upgraded ingredients.</p>
-      </div>
-      <div class="grid cols-3">
-        <article class="card">
-          <img src="https://placehold.co/420x260/jpg" alt="Pesto pasta bake" />
-          <h3>Veggie Pesto Pasta Bake</h3>
-          <p class="muted">Zucchini, blistered tomatoes, mozzarella, basil pesto.</p>
-        </article>
-        <article class="card">
-          <img src="https://placehold.co/420x260/jpg" alt="Beef lasagna" />
-          <h3>Spinach & Beef Lasagna</h3>
-          <p class="muted">Slow-simmered ragu, ricotta layers, parmesan crisp top.</p>
-        </article>
-        <article class="card">
-          <img src="https://placehold.co/420x260/jpg" alt="Curry bowl" />
-          <h3>Coconut Curry Bowl</h3>
-          <p class="muted">Roasted veggies, jasmine rice, lemongrass coconut sauce.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-header">
-        <h2>Family Bundles</h2>
-        <p class="section-lead">Sized to share—great for busy nights and weekend resets.</p>
-      </div>
-      <div class="grid cols-2">
-        <article class="card">
-          <img src="https://placehold.co/520x320/png" alt="Family pasta bake" />
-          <h3>Family Pasta Bake</h3>
-          <p class="muted">Feeds 4–5. Comes with garlic bread and a crisp salad kit.</p>
-        </article>
-        <article class="card">
-          <img src="https://placehold.co/520x320/png" alt="Roast chicken bundle" />
-          <h3>Roast Chicken Bundle</h3>
-          <p class="muted">Feeds 4. Herb chicken, roasted veg medley, mashed potatoes, pan sauce.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section panel">
-      <div class="cta">
+    <main class="page">
+        <section class="hero slim">
         <div>
-          <h2>Allergen & dietary labels</h2>
-          <p class="section-lead">Every dish includes clear tags for dairy, gluten, nuts, and spice level. Reach out for custom guidance.</p>
-          <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <a class="btn btn-primary" href="/order">Build my box</a>
-            <a class="btn btn-ghost" href="/allergens">View allergen info</a>
-          </div>
+            <div class="pill">Menu</div>
+            <h1>Chef-crafted meals, frozen fresh.</h1>
+            <p class="tagline">Build a box with hearty mains, nourishing bowls, and family-sized favorites—ready in about 15 minutes.</p>
+            <div style="margin-top: 20px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="/order">Start an order</a>
+            <a class="btn btn-ghost" href="/how">See how it works</a>
+            </div>
         </div>
-        <div>
-          <img src="https://placehold.co/520x320/png" alt="Allergen labels" style="width:100%; border-radius: var(--radius); border:1px solid var(--border); box-shadow: var(--shadow);" />
+        <div class="hero-visual">
+            <img src="https://placehold.co/640x360/jpg" alt="Assorted freezer meals" />
+            <div class="badge">Seasonal picks</div>
         </div>
-      </div>
-    </section>
+        </section>
 
-    <section class="section">
-      <div class="panel">
-        <h2>Ready to stock your freezer?</h2>
-        <p class="section-lead">Pick your meals, choose delivery, and we’ll pack everything freezer-ready with reheating instructions.</p>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="/order">Start an order</a>
-          <a class="btn btn-ghost" href="/how">How it works</a>
-          <a class="btn btn-ghost" href="/contact">Questions? Contact us</a>
+        <section class="section">
+        <div class="section-header">
+            <h2>Signature Mains</h2>
+            <p class="section-lead">Protein-forward entrées with balanced sides and sauces that reheat beautifully.</p>
         </div>
-      </div>
-    </section>
-  </main>
+        <div class="grid cols-3">
+            <article class="card">
+            <img src="https://placehold.co/420x260/jpg" alt="Smoky chipotle chicken" />
+            <h3>Smoky Chipotle Chicken</h3>
+            <p class="muted">Charred corn, roasted sweet potatoes, lime crema.</p>
+            </article>
+            <article class="card">
+            <img src="https://placehold.co/420x260/jpg" alt="Honey garlic salmon" />
+            <h3>Honey-Garlic Salmon</h3>
+            <p class="muted">Sesame greens, wild rice, citrus herb butter.</p>
+            </article>
+            <article class="card">
+            <img src="https://placehold.co/420x260/jpg" alt="Herb roasted turkey" />
+            <h3>Herb-Roasted Turkey</h3>
+            <p class="muted">Garlic mash, green beans, cranberry pan jus.</p>
+            </article>
+        </div>
+        </section>
 
-  <%- include("partials/footer") %>
+        <section class="section">
+        <div class="section-header">
+            <h2>Comfort Classics</h2>
+            <p class="section-lead">Cozy, freezer-friendly favorites with upgraded ingredients.</p>
+        </div>
+        <div class="grid cols-3">
+            <article class="card">
+            <img src="https://placehold.co/420x260/jpg" alt="Pesto pasta bake" />
+            <h3>Veggie Pesto Pasta Bake</h3>
+            <p class="muted">Zucchini, blistered tomatoes, mozzarella, basil pesto.</p>
+            </article>
+            <article class="card">
+            <img src="https://placehold.co/420x260/jpg" alt="Beef lasagna" />
+            <h3>Spinach & Beef Lasagna</h3>
+            <p class="muted">Slow-simmered ragu, ricotta layers, parmesan crisp top.</p>
+            </article>
+            <article class="card">
+            <img src="https://placehold.co/420x260/jpg" alt="Curry bowl" />
+            <h3>Coconut Curry Bowl</h3>
+            <p class="muted">Roasted veggies, jasmine rice, lemongrass coconut sauce.</p>
+            </article>
+        </div>
+        </section>
+
+        <section class="section">
+        <div class="section-header">
+            <h2>Family Bundles</h2>
+            <p class="section-lead">Sized to share—great for busy nights and weekend resets.</p>
+        </div>
+        <div class="grid cols-2">
+            <article class="card">
+            <img src="https://placehold.co/520x320/png" alt="Family pasta bake" />
+            <h3>Family Pasta Bake</h3>
+            <p class="muted">Feeds 4–5. Comes with garlic bread and a crisp salad kit.</p>
+            </article>
+            <article class="card">
+            <img src="https://placehold.co/520x320/png" alt="Roast chicken bundle" />
+            <h3>Roast Chicken Bundle</h3>
+            <p class="muted">Feeds 4. Herb chicken, roasted veg medley, mashed potatoes, pan sauce.</p>
+            </article>
+        </div>
+        </section>
+
+        <section class="section">
+        <div class="panel">
+            <h2>Ready to stock your freezer?</h2>
+            <p class="section-lead">Pick your meals, choose delivery, and we’ll pack everything freezer-ready with reheating instructions.</p>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="/order">Start an order</a>
+            <a class="btn btn-ghost" href="/how">How it works</a>
+            <a class="btn btn-ghost" href="/contact">Questions? Contact us</a>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <%- include("partials/footer") %>
 </body>
 </html>

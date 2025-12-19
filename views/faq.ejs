@@ -2,143 +2,143 @@
 <html lang="en">
 <%- include("partials/head", { title: "FAQs | FreezerMeals", description: "Answers about delivery, storage, reheating, allergens, and ordering FreezerMeals." }) %>
 <body>
-  <%- include("partials/navbar") %>
+    <%- include("partials/navbar") %>
 
-  <main class="page">
-    <section class="hero slim">
-      <div>
-        <div class="pill">FAQs</div>
-        <h1>Everything you need to know.</h1>
-        <p class="tagline">From delivery windows to reheating, allergens, and storing your meals—quick answers from the three teens behind FreezerMeals.</p>
-        <div style="margin-top: 20px; display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn btn-primary" href="/order">Build my box</a>
-          <a class="btn btn-ghost" href="/contact">Still have questions? Contact us</a>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <img src="https://placehold.co/640x360/png" alt="FAQ illustration" />
-        <div class="badge">Quick answers</div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-header">
-        <h2>Delivery & logistics</h2>
-        <p class="section-lead">When, where, and how your meals arrive.</p>
-      </div>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>What are your delivery windows?</h3>
-          <p class="muted">We currently deliver Tue 10–2, Thu 4–8, and Sat 9–1. Choose your slot at checkout.</p>
-        </div>
-        <div class="card">
-          <h3>Is delivery free?</h3>
-          <p class="muted">Delivery is free for orders over $75. Otherwise, it’s an $8 flat fee to cover cold-chain handling.</p>
-        </div>
-        <div class="card">
-          <h3>How do you keep meals cold?</h3>
-          <p class="muted">We pack with insulation and cold packs to maintain frozen temps until the end of your selected window.</p>
-        </div>
-        <div class="card">
-          <h3>Do you offer pickup?</h3>
-          <p class="muted">Not yet. We’re focused on reliable local delivery first.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-header">
-        <h2>Storing & reheating</h2>
-        <p class="section-lead">Keep meals at peak quality and reheat with confidence.</p>
-      </div>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>How long do meals last in the freezer?</h3>
-          <p class="muted">Best within 8 weeks frozen. After thawing in the fridge, enjoy within 3 days.</p>
-        </div>
-        <div class="card">
-          <h3>Do I need to thaw before heating?</h3>
-          <p class="muted">Yes—thaw in the fridge 12–18 hours. For a faster option, use a cold-water bath (still sealed) for ~45 minutes.</p>
-        </div>
-        <div class="card">
-          <h3>What’s the best way to reheat?</h3>
-          <p class="muted">Stovetop on medium or 350°F oven for most entrées. Bowls do well in the microwave (4–6 minutes). Follow the label on each dish.</p>
-        </div>
-        <div class="card">
-          <h3>Can I refreeze meals?</h3>
-          <p class="muted">We don’t recommend refreezing once thawed. Keep frozen until you’re ready to defrost and heat.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-header">
-        <h2>Ingredients & allergens</h2>
-        <p class="section-lead">Transparency about what’s inside.</p>
-      </div>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>How are allergens handled?</h3>
-          <p class="muted">We label every meal for dairy, gluten, nuts, and spice level. We prep with strict cross-contact protocols but use a shared kitchen.</p>
-        </div>
-        <div class="card">
-          <h3>Do you have vegetarian or pescatarian options?</h3>
-          <p class="muted">Yes—each menu drop includes veg and fish options. Check the menu tags for “Veg” or “Pesc”.</p>
-        </div>
-        <div class="card">
-          <h3>Are there high-protein or lighter options?</h3>
-          <p class="muted">We balance macros across the menu; high-protein and lighter-cal options are tagged accordingly.</p>
-        </div>
-        <div class="card">
-          <h3>Do you use preservatives?</h3>
-          <p class="muted">No. We rely on flash-freezing to lock in freshness without additives.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="section-header">
-        <h2>Ordering & billing</h2>
-        <p class="section-lead">How to place, change, or cancel an order.</p>
-      </div>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>Is there a minimum order?</h3>
-          <p class="muted">Yes—a 6-meal minimum to keep delivery efficient and cold-chain secure.</p>
-        </div>
-        <div class="card">
-          <h3>Can I change my delivery after ordering?</h3>
-          <p class="muted">Yes, if you contact us 24 hours before your slot. Reach us at <a href="mailto:hello@freezermeals.com">hello@freezermeals.com</a>.</p>
-        </div>
-        <div class="card">
-          <h3>What payment methods do you accept?</h3>
-          <p class="muted">Major cards and most digital wallets. Taxes are calculated at checkout; delivery fee applies if under $75.</p>
-        </div>
-        <div class="card">
-          <h3>Do you offer subscriptions?</h3>
-          <p class="muted">Not yet—we’re focusing on flexible one-time orders while we expand.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section panel">
-      <div class="cta">
+    <main class="page">
+        <section class="hero slim">
         <div>
-          <h2>Didn’t see your question?</h2>
-          <p class="section-lead">We’re a small team—your message goes straight to the founders.</p>
-          <div style="display:flex; gap:12px; flex-wrap:wrap;">
-            <a class="btn btn-primary" href="/contact">Contact us</a>
-            <a class="btn btn-ghost" href="/order">Start an order</a>
-            <a class="btn btn-ghost" href="/newsletter">Join newsletter</a>
-          </div>
+            <div class="pill">FAQs</div>
+            <h1>Everything you need to know.</h1>
+            <p class="tagline">From delivery windows to reheating, allergens, and storing your meals—quick answers from the three teens behind FreezerMeals.</p>
+            <div style="margin-top: 20px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn btn-primary" href="/order">Build my box</a>
+            <a class="btn btn-ghost" href="/contact">Still have questions? Contact us</a>
+            </div>
         </div>
-        <div>
-          <img src="https://placehold.co/520x320/jpg" alt="Customer support" style="width:100%; border-radius: var(--radius); border:1px solid var(--border); box-shadow: var(--shadow);" />
+        <div class="hero-visual">
+            <img src="https://placehold.co/640x360/png" alt="FAQ illustration" />
+            <div class="badge">Quick answers</div>
         </div>
-      </div>
-    </section>
-  </main>
+        </section>
 
-  <%- include("partials/footer") %>
+        <section class="section">
+        <div class="section-header">
+            <h2>Delivery & logistics</h2>
+            <p class="section-lead">When, where, and how your meals arrive.</p>
+        </div>
+        <div class="grid cols-2">
+            <div class="card">
+            <h3>What are your delivery windows?</h3>
+            <p class="muted">We currently deliver Tue 10–2, Thu 4–8, and Sat 9–1. Choose your slot at checkout.</p>
+            </div>
+            <div class="card">
+            <h3>Is delivery free?</h3>
+            <p class="muted">Delivery is free for orders over $75. Otherwise, it’s an $8 flat fee to cover cold-chain handling.</p>
+            </div>
+            <div class="card">
+            <h3>How do you keep meals cold?</h3>
+            <p class="muted">We pack with insulation and cold packs to maintain frozen temps until the end of your selected window.</p>
+            </div>
+            <div class="card">
+            <h3>Do you offer pickup?</h3>
+            <p class="muted">Not yet. We’re focused on reliable local delivery first.</p>
+            </div>
+        </div>
+        </section>
+
+        <section class="section">
+        <div class="section-header">
+            <h2>Storing & reheating</h2>
+            <p class="section-lead">Keep meals at peak quality and reheat with confidence.</p>
+        </div>
+        <div class="grid cols-2">
+            <div class="card">
+            <h3>How long do meals last in the freezer?</h3>
+            <p class="muted">Best within 8 weeks frozen. After thawing in the fridge, enjoy within 3 days.</p>
+            </div>
+            <div class="card">
+            <h3>Do I need to thaw before heating?</h3>
+            <p class="muted">Yes—thaw in the fridge 12–18 hours. For a faster option, use a cold-water bath (still sealed) for ~45 minutes.</p>
+            </div>
+            <div class="card">
+            <h3>What’s the best way to reheat?</h3>
+            <p class="muted">Stovetop on medium or 350°F oven for most entrées. Bowls do well in the microwave (4–6 minutes). Follow the label on each dish.</p>
+            </div>
+            <div class="card">
+            <h3>Can I refreeze meals?</h3>
+            <p class="muted">We don’t recommend refreezing once thawed. Keep frozen until you’re ready to defrost and heat.</p>
+            </div>
+        </div>
+        </section>
+
+        <section class="section">
+        <div class="section-header">
+            <h2>Ingredients & allergens</h2>
+            <p class="section-lead">Transparency about what’s inside.</p>
+        </div>
+        <div class="grid cols-2">
+            <div class="card">
+            <h3>How are allergens handled?</h3>
+            <p class="muted">We label every meal for dairy, gluten, nuts, and spice level. We prep with strict cross-contact protocols but use a shared kitchen.</p>
+            </div>
+            <div class="card">
+            <h3>Do you have vegetarian or pescatarian options?</h3>
+            <p class="muted">Yes—each menu drop includes veg and fish options. Check the menu tags for “Veg” or “Pesc”.</p>
+            </div>
+            <div class="card">
+            <h3>Are there high-protein or lighter options?</h3>
+            <p class="muted">We balance macros across the menu; high-protein and lighter-cal options are tagged accordingly.</p>
+            </div>
+            <div class="card">
+            <h3>Do you use preservatives?</h3>
+            <p class="muted">No. We rely on flash-freezing to lock in freshness without additives.</p>
+            </div>
+        </div>
+        </section>
+
+        <section class="section">
+        <div class="section-header">
+            <h2>Ordering & billing</h2>
+            <p class="section-lead">How to place, change, or cancel an order.</p>
+        </div>
+        <div class="grid cols-2">
+            <div class="card">
+            <h3>Is there a minimum order?</h3>
+            <p class="muted">Yes—a 6-meal minimum to keep delivery efficient and cold-chain secure.</p>
+            </div>
+            <div class="card">
+            <h3>Can I change my delivery after ordering?</h3>
+            <p class="muted">Yes, if you contact us 24 hours before your slot. Reach us at <a href="mailto:hello@freezermeals.com">hello@freezermeals.com</a>.</p>
+            </div>
+            <div class="card">
+            <h3>What payment methods do you accept?</h3>
+            <p class="muted">Major cards and most digital wallets. Taxes are calculated at checkout; delivery fee applies if under $75.</p>
+            </div>
+            <div class="card">
+            <h3>Do you offer subscriptions?</h3>
+            <p class="muted">Not yet—we’re focusing on flexible one-time orders while we expand.</p>
+            </div>
+        </div>
+        </section>
+
+        <section class="section panel">
+        <div class="cta">
+            <div>
+            <h2>Didn’t see your question?</h2>
+            <p class="section-lead">We’re a small team—your message goes straight to the founders.</p>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                <a class="btn btn-primary" href="/contact">Contact us</a>
+                <a class="btn btn-ghost" href="/order">Start an order</a>
+                <a class="btn btn-ghost" href="/newsletter">Join newsletter</a>
+            </div>
+            </div>
+            <div>
+            <img src="https://placehold.co/520x320/jpg" alt="Customer support" style="width:100%; border-radius: var(--radius); border:1px solid var(--border); box-shadow: var(--shadow);" />
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <%- include("partials/footer") %>
 </body>
 </html>

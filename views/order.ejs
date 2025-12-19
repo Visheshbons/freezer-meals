@@ -2,272 +2,272 @@
 <html lang="en">
 <%- include("partials/head", { title: "Order | FreezerMeals", description: "Build a custom freezer-ready meal box and check out with secure Stripe payments." }) %>
 <body>
-  <%- include("partials/navbar") %>
+    <%- include("partials/navbar") %>
 
-  <main class="page">
-    <!-- Hero -->
-    <section class="hero slim">
-      <div>
-        <div class="pill">Order</div>
-        <h1>Build your freezer box in minutes.</h1>
-        <p class="tagline">Pick meals, set delivery, and check out with secure Stripe payments.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#box-builder">Start building</a>
-          <a class="btn btn-ghost" href="/menu">Browse menu</a>
+    <main class="page">
+        <!-- Hero -->
+        <section class="hero slim">
+        <div>
+            <div class="pill">Order</div>
+            <h1>Build your freezer box in minutes.</h1>
+            <p class="tagline">Pick meals, set delivery, and check out with secure Stripe payments.</p>
+            <div class="hero-actions">
+            <a class="btn btn-primary" href="#box-builder">Start building</a>
+            <a class="btn btn-ghost" href="/menu">Browse menu</a>
+            </div>
         </div>
-      </div>
-      <div class="hero-visual">
-        <img src="https://placehold.co/640x360/png" alt="FreezerMeals box" />
-        <div class="badge">Multi-step checkout</div>
-      </div>
-    </section>
+        <div class="hero-visual">
+            <img src="https://placehold.co/640x360/png" alt="FreezerMeals box" />
+            <div class="badge">Multi-step checkout</div>
+        </div>
+        </section>
 
-    <!-- Box Builder -->
-    <section id="box-builder" class="section panel">
-      <div class="section-header">
-        <h2>Box builder</h2>
-        <p class="section-lead">Three steps: choose meals, set delivery, review and pay.</p>
-      </div>
-
-      <div id="order-app"
-           data-stripe-key="<%= stripePublishableKey %>"
-           data-delivery-free-threshold="75"
-           data-shipping-fee="8">
-        <div class="progress" aria-label="Order progress">
-          <div class="progress-step active" data-step="1">1. Meals</div>
-          <div class="progress-step" data-step="2">2. Delivery</div>
-          <div class="progress-step" data-step="3">3. Pay</div>
+        <!-- Box Builder -->
+        <section id="box-builder" class="section panel">
+        <div class="section-header">
+            <h2>Box builder</h2>
+            <p class="section-lead">Three steps: choose meals, set delivery, review and pay.</p>
         </div>
 
-        <!-- Step 1: Meals -->
-        <div class="step-card" data-step-panel="1">
-          <div class="section-header tight">
-            <h3>Select your meals</h3>
-            <p class="section-lead">Add quantities to build your box (6–14 meals recommended).</p>
-          </div>
-          <div class="grid cols-3" id="meal-grid">
-            <% const suggestedMeals = [
-                { id: "chipotle-chicken", name: "Smoky Chipotle Chicken", desc: "Roasted sweet potatoes, charred corn, lime crema.", price: 12, img: "https://placehold.co/420x260/jpg" },
-                { id: "pesto-bake", name: "Veggie Pesto Pasta Bake", desc: "Zucchini, blistered tomatoes, mozzarella, basil pesto.", price: 11, img: "https://placehold.co/420x260/jpg" },
-                { id: "honey-salmon", name: "Honey-Garlic Salmon", desc: "Sesame greens, wild rice, citrus herb butter.", price: 13, img: "https://placehold.co/420x260/jpg" },
-                { id: "butter-chicken", name: "Butter Chicken & Rice", desc: "Creamy tomato sauce, basmati, charred broccoli.", price: 12, img: "https://placehold.co/420x260/jpg" },
-                { id: "lasagna", name: "Hearty Beef Lasagna", desc: "Slow-simmered sauce, ricotta, mozzarella.", price: 12, img: "https://placehold.co/420x260/jpg" },
-                { id: "tofu-bowl", name: "Ginger Sesame Tofu Bowl", desc: "Brown rice, edamame, pickled veg, sesame glaze.", price: 11, img: "https://placehold.co/420x260/jpg" },
-              ]; %>
-            <% suggestedMeals.forEach(meal => { %>
-              <article class="card meal-card" data-meal-id="<%= meal.id %>" data-meal-price="<%= meal.price %>">
-                <img src="<%= meal.img %>" alt="<%= meal.name %>" />
-                <h4><%= meal.name %></h4>
-                <p class="muted"><%= meal.desc %></p>
-                <div class="meal-card__footer">
-                  <span class="price">$<%= meal.price %></span>
-                  <div class="qty-controls" data-qty-controls>
-                    <button type="button" class="btn-ghost qty-btn" data-action="decr">−</button>
-                    <span class="qty" data-qty>0</span>
-                    <button type="button" class="btn-ghost qty-btn" data-action="incr">+</button>
-                  </div>
+        <div id="order-app"
+            data-stripe-key="<%= stripePublishableKey %>"
+            data-delivery-free-threshold="75"
+            data-shipping-fee="8">
+            <div class="progress" aria-label="Order progress">
+            <div class="progress-step active" data-step="1">1. Meals</div>
+            <div class="progress-step" data-step="2">2. Delivery</div>
+            <div class="progress-step" data-step="3">3. Pay</div>
+            </div>
+
+            <!-- Step 1: Meals -->
+            <div class="step-card" data-step-panel="1">
+            <div class="section-header tight">
+                <h3>Select your meals</h3>
+                <p class="section-lead">Add quantities to build your box (6–14 meals recommended).</p>
+            </div>
+            <div class="grid cols-3" id="meal-grid">
+                <% const suggestedMeals = [
+                    { id: "chipotle-chicken", name: "Smoky Chipotle Chicken", desc: "Roasted sweet potatoes, charred corn, lime crema.", price: 12, img: "https://placehold.co/420x260/jpg" },
+                    { id: "pesto-bake", name: "Veggie Pesto Pasta Bake", desc: "Zucchini, blistered tomatoes, mozzarella, basil pesto.", price: 11, img: "https://placehold.co/420x260/jpg" },
+                    { id: "honey-salmon", name: "Honey-Garlic Salmon", desc: "Sesame greens, wild rice, citrus herb butter.", price: 13, img: "https://placehold.co/420x260/jpg" },
+                    { id: "butter-chicken", name: "Butter Chicken & Rice", desc: "Creamy tomato sauce, basmati, charred broccoli.", price: 12, img: "https://placehold.co/420x260/jpg" },
+                    { id: "lasagna", name: "Hearty Beef Lasagna", desc: "Slow-simmered sauce, ricotta, mozzarella.", price: 12, img: "https://placehold.co/420x260/jpg" },
+                    { id: "tofu-bowl", name: "Ginger Sesame Tofu Bowl", desc: "Brown rice, edamame, pickled veg, sesame glaze.", price: 11, img: "https://placehold.co/420x260/jpg" },
+                ]; %>
+                <% suggestedMeals.forEach(meal => { %>
+                <article class="card meal-card" data-meal-id="<%= meal.id %>" data-meal-price="<%= meal.price %>">
+                    <img src="<%= meal.img %>" alt="<%= meal.name %>" />
+                    <h4><%= meal.name %></h4>
+                    <p class="muted"><%= meal.desc %></p>
+                    <div class="meal-card__footer">
+                    <span class="price">$<%= meal.price %></span>
+                    <div class="qty-controls" data-qty-controls>
+                        <button type="button" class="btn-ghost qty-btn" data-action="decr">−</button>
+                        <span class="qty" data-qty>0</span>
+                        <button type="button" class="btn-ghost qty-btn" data-action="incr">+</button>
+                    </div>
+                    </div>
+                </article>
+                <% }); %>
+            </div>
+            <div class="step-actions">
+                <div class="muted">Tip: most customers choose 8–12 meals for free delivery.</div>
+                <button class="btn btn-primary" type="button" data-next-step>Next: Delivery</button>
+            </div>
+            </div>
+
+            <!-- Step 2: Delivery -->
+            <div class="step-card hidden" data-step-panel="2">
+            <div class="section-header tight">
+                <h3>Delivery details</h3>
+                <p class="section-lead">Choose when and how we drop off your freezer box.</p>
+            </div>
+            <form id="delivery-form" class="grid cols-2 form-grid">
+                <div class="card">
+                <h4>Delivery window</h4>
+                <p class="muted">Pick the slot that works for you.</p>
+                <select name="deliveryWindow" required>
+                    <option value="Tue 10-2">Tuesday (10am–2pm)</option>
+                    <option value="Thu 4-8">Thursday (4pm–8pm)</option>
+                    <option value="Sat 9-1">Saturday (9am–1pm)</option>
+                </select>
                 </div>
-              </article>
-            <% }); %>
-          </div>
-          <div class="step-actions">
-            <div class="muted">Tip: most customers choose 8–12 meals for free delivery.</div>
-            <button class="btn btn-primary" type="button" data-next-step>Next: Delivery</button>
-          </div>
-        </div>
-
-        <!-- Step 2: Delivery -->
-        <div class="step-card hidden" data-step-panel="2">
-          <div class="section-header tight">
-            <h3>Delivery details</h3>
-            <p class="section-lead">Choose when and how we drop off your freezer box.</p>
-          </div>
-          <form id="delivery-form" class="grid cols-2 form-grid">
-            <div class="card">
-              <h4>Delivery window</h4>
-              <p class="muted">Pick the slot that works for you.</p>
-              <select name="deliveryWindow" required>
-                <option value="Tue 10-2">Tuesday (10am–2pm)</option>
-                <option value="Thu 4-8">Thursday (4pm–8pm)</option>
-                <option value="Sat 9-1">Saturday (9am–1pm)</option>
-              </select>
+                <div class="card">
+                <h4>Address</h4>
+                <p class="muted">We only deliver within city limits right now.</p>
+                <input name="name" placeholder="Full name" required />
+                <input name="address1" placeholder="Street address" required />
+                <input name="address2" placeholder="Apt, suite (optional)" />
+                <div class="inline-grid">
+                    <input name="city" placeholder="City" required />
+                    <input name="zip" placeholder="ZIP" required />
+                </div>
+                <input name="phone" placeholder="Phone for driver" required />
+                </div>
+                <div class="card">
+                <h4>Special notes</h4>
+                <textarea name="notes" rows="4" placeholder="Gate codes, allergens, leave with neighbor, etc."></textarea>
+                </div>
+                <div class="card">
+                <h4>Delivery preference</h4>
+                <label class="radio-line">
+                    <input type="radio" name="deliveryPref" value="contactless" checked /> Contactless drop-off
+                </label>
+                <label class="radio-line">
+                    <input type="radio" name="deliveryPref" value="hand-off" /> Hand-off to recipient
+                </label>
+                </div>
+            </form>
+            <div class="step-actions">
+                <button class="btn btn-ghost" type="button" data-prev-step>Back</button>
+                <button class="btn btn-primary" type="button" data-next-step>Next: Review & Pay</button>
             </div>
-            <div class="card">
-              <h4>Address</h4>
-              <p class="muted">We only deliver within city limits right now.</p>
-              <input name="name" placeholder="Full name" required />
-              <input name="address1" placeholder="Street address" required />
-              <input name="address2" placeholder="Apt, suite (optional)" />
-              <div class="inline-grid">
-                <input name="city" placeholder="City" required />
-                <input name="zip" placeholder="ZIP" required />
-              </div>
-              <input name="phone" placeholder="Phone for driver" required />
-            </div>
-            <div class="card">
-              <h4>Special notes</h4>
-              <textarea name="notes" rows="4" placeholder="Gate codes, allergens, leave with neighbor, etc."></textarea>
-            </div>
-            <div class="card">
-              <h4>Delivery preference</h4>
-              <label class="radio-line">
-                <input type="radio" name="deliveryPref" value="contactless" checked /> Contactless drop-off
-              </label>
-              <label class="radio-line">
-                <input type="radio" name="deliveryPref" value="hand-off" /> Hand-off to recipient
-              </label>
-            </div>
-          </form>
-          <div class="step-actions">
-            <button class="btn btn-ghost" type="button" data-prev-step>Back</button>
-            <button class="btn btn-primary" type="button" data-next-step>Next: Review & Pay</button>
-          </div>
-        </div>
-
-        <!-- Step 3: Review & Pay -->
-        <div class="step-card hidden" data-step-panel="3">
-          <div class="section-header tight">
-            <h3>Review & pay</h3>
-            <p class="section-lead">Confirm your box, see totals, and checkout with Stripe.</p>
-          </div>
-
-          <div class="grid cols-2">
-            <div class="card">
-              <h4>Your box</h4>
-              <div id="cart-list" class="cart-list muted"></div>
-              <div class="divider"></div>
-              <div class="summary-line"><span>Meals subtotal</span><span id="summary-subtotal">$0.00</span></div>
-              <div class="summary-line"><span>Shipping</span><span id="summary-shipping">$0.00</span></div>
-              <div class="summary-line total-line"><strong>Total</strong><strong id="summary-total">$0.00</strong></div>
-              <div class="muted note">Free delivery over $75, otherwise $8 flat.</div>
             </div>
 
-            <div class="card">
-              <h4>Payment</h4>
-              <% if (!stripePublishableKey) { %>
-                <p class="muted">Payments are currently unavailable. Please provide a Stripe publishable key.</p>
-              <% } else { %>
-                <form id="payment-form">
-                  <div id="payment-element" class="payment-element"></div>
-                  <button id="submit-payment" class="btn btn-primary" type="submit" disabled>Pay now</button>
-                  <div id="payment-message" class="muted payment-message"></div>
-                </form>
-              <% } %>
+            <!-- Step 3: Review & Pay -->
+            <div class="step-card hidden" data-step-panel="3">
+            <div class="section-header tight">
+                <h3>Review & pay</h3>
+                <p class="section-lead">Confirm your box, see totals, and checkout with Stripe.</p>
             </div>
-          </div>
 
-          <div class="step-actions">
-            <button class="btn btn-ghost" type="button" data-prev-step>Back</button>
-          </div>
-        </div>
-      </div>
-    </section>
+            <div class="grid cols-2">
+                <div class="card">
+                <h4>Your box</h4>
+                <div id="cart-list" class="cart-list muted"></div>
+                <div class="divider"></div>
+                <div class="summary-line"><span>Meals subtotal</span><span id="summary-subtotal">$0.00</span></div>
+                <div class="summary-line"><span>Shipping</span><span id="summary-shipping">$0.00</span></div>
+                <div class="summary-line total-line"><strong>Total</strong><strong id="summary-total">$0.00</strong></div>
+                <div class="muted note">Free delivery over $75, otherwise $8 flat.</div>
+                </div>
 
-    <!-- Popular Picks -->
-    <section class="section">
-      <div class="section-header">
-        <h2>Popular picks</h2>
-        <p class="section-lead">Add these customer favorites to your box.</p>
-      </div>
-      <div class="grid cols-3">
-        <article class="card">
-          <img src="https://placehold.co/420x260/jpg" alt="Smoky chipotle chicken" />
-          <h3>Smoky Chipotle Chicken</h3>
-          <p class="muted">Roasted sweet potatoes, charred corn, lime crema.</p>
-          <button type="button" class="btn btn-ghost" data-add-meal="chipotle-chicken">Add to box →</button>
-        </article>
-        <article class="card">
-          <img src="https://placehold.co/420x260/jpg" alt="Pesto pasta bake" />
-          <h3>Veggie Pesto Pasta Bake</h3>
-          <p class="muted">Zucchini, blistered tomatoes, mozzarella, basil pesto.</p>
-          <button type="button" class="btn btn-ghost" data-add-meal="pesto-bake">Add to box →</button>
-        </article>
-        <article class="card">
-          <img src="https://placehold.co/420x260/jpg" alt="Honey garlic salmon" />
-          <h3>Honey-Garlic Salmon</h3>
-          <p class="muted">Sesame greens, wild rice, citrus herb butter.</p>
-          <button type="button" class="btn btn-ghost" data-add-meal="honey-salmon">Add to box →</button>
-        </article>
-      </div>
-    </section>
+                <div class="card">
+                <h4>Payment</h4>
+                <% if (!stripePublishableKey) { %>
+                    <p class="muted">Payments are currently unavailable. Please provide a Stripe publishable key.</p>
+                <% } else { %>
+                    <form id="payment-form">
+                    <div id="payment-element" class="payment-element"></div>
+                    <button id="submit-payment" class="btn btn-primary" type="submit" disabled>Pay now</button>
+                    <div id="payment-message" class="muted payment-message"></div>
+                    </form>
+                <% } %>
+                </div>
+            </div>
 
-    <!-- Transparent pricing -->
-    <section class="section panel">
-      <div class="cta">
-        <div>
-          <h2>Transparent pricing</h2>
-          <p class="section-lead">No hidden fees. Packaging and cold-chain handling included.</p>
-          <ul class="muted pricing-list">
-            <li>Meals: from $10–$13 each depending on size and protein.</li>
-            <li>Bundles: family packs from $45.</li>
-            <li>Delivery: free over $75, otherwise $8 flat.</li>
-          </ul>
-          <div class="cta-actions">
-            <a class="btn btn-primary" href="/order#box-builder">Build my box</a>
-            <a class="btn btn-ghost" href="/faq">Delivery FAQs</a>
-          </div>
+            <div class="step-actions">
+                <button class="btn btn-ghost" type="button" data-prev-step>Back</button>
+            </div>
+            </div>
         </div>
-        <div>
-          <img src="https://placehold.co/520x320/png" alt="Price breakdown graphic" class="img-card" />
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- Heat & eat steps -->
-    <section class="section">
-      <div class="section-header">
-        <h2>Heat & eat in three steps</h2>
-        <p class="section-lead">Defrost overnight, heat in ~15 minutes, enjoy.</p>
-      </div>
-      <div class="grid cols-3">
-        <div class="card step">
-          <div class="step-number">1</div>
-          <div>
-            <h3>Defrost</h3>
-            <p class="muted">Move meals to the fridge 12–18 hours before eating.</p>
-          </div>
+        <!-- Popular Picks -->
+        <section class="section">
+        <div class="section-header">
+            <h2>Popular picks</h2>
+            <p class="section-lead">Add these customer favorites to your box.</p>
         </div>
-        <div class="card step">
-          <div class="step-number">2</div>
-          <div>
-            <h3>Heat</h3>
-            <p class="muted">Stovetop, oven, or microwave—follow the label on each dish.</p>
-          </div>
+        <div class="grid cols-3">
+            <article class="card">
+            <img src="https://placehold.co/420x260/jpg" alt="Smoky chipotle chicken" />
+            <h3>Smoky Chipotle Chicken</h3>
+            <p class="muted">Roasted sweet potatoes, charred corn, lime crema.</p>
+            <button type="button" class="btn btn-ghost" data-add-meal="chipotle-chicken">Add to box →</button>
+            </article>
+            <article class="card">
+            <img src="https://placehold.co/420x260/jpg" alt="Pesto pasta bake" />
+            <h3>Veggie Pesto Pasta Bake</h3>
+            <p class="muted">Zucchini, blistered tomatoes, mozzarella, basil pesto.</p>
+            <button type="button" class="btn btn-ghost" data-add-meal="pesto-bake">Add to box →</button>
+            </article>
+            <article class="card">
+            <img src="https://placehold.co/420x260/jpg" alt="Honey garlic salmon" />
+            <h3>Honey-Garlic Salmon</h3>
+            <p class="muted">Sesame greens, wild rice, citrus herb butter.</p>
+            <button type="button" class="btn btn-ghost" data-add-meal="honey-salmon">Add to box →</button>
+            </article>
         </div>
-        <div class="card step">
-          <div class="step-number">3</div>
-          <div>
-            <h3>Enjoy</h3>
-            <p class="muted">Finish with fresh herbs or citrus for a chef-style touch.</p>
-          </div>
-        </div>
-      </div>
-      <div class="step-link">
-        <a class="btn btn-ghost" href="/how">See the full process →</a>
-      </div>
-    </section>
+        </section>
 
-    <!-- Help -->
-    <section class="section panel">
-      <div class="cta">
-        <div>
-          <h2>Need help choosing?</h2>
-          <p class="section-lead">Tell us your preferences and we’ll draft a starter box for you.</p>
-          <div class="cta-actions">
-            <a class="btn btn-primary" href="/contact">Talk to us</a>
-            <a class="btn btn-ghost" href="/reviews">See customer favorites</a>
-          </div>
+        <!-- Transparent pricing -->
+        <section class="section panel">
+        <div class="cta">
+            <div>
+            <h2>Transparent pricing</h2>
+            <p class="section-lead">No hidden fees. Packaging and cold-chain handling included.</p>
+            <ul class="muted pricing-list">
+                <li>Meals: from $10–$13 each depending on size and protein.</li>
+                <li>Bundles: family packs from $45.</li>
+                <li>Delivery: free over $75, otherwise $8 flat.</li>
+            </ul>
+            <div class="cta-actions">
+                <a class="btn btn-primary" href="/order#box-builder">Build my box</a>
+                <a class="btn btn-ghost" href="/faq">Delivery FAQs</a>
+            </div>
+            </div>
+            <div>
+            <img src="https://placehold.co/520x320/png" alt="Price breakdown graphic" class="img-card" />
+            </div>
         </div>
-        <div>
-          <img src="https://placehold.co/520x320/jpg" alt="Customer support" class="img-card" />
+        </section>
+
+        <!-- Heat & eat steps -->
+        <section class="section">
+        <div class="section-header">
+            <h2>Heat & eat in three steps</h2>
+            <p class="section-lead">Defrost overnight, heat in ~15 minutes, enjoy.</p>
         </div>
-      </div>
-    </section>
-  </main>
+        <div class="grid cols-3">
+            <div class="card step">
+            <div class="step-number">1</div>
+            <div>
+                <h3>Defrost</h3>
+                <p class="muted">Move meals to the fridge 12–18 hours before eating.</p>
+            </div>
+            </div>
+            <div class="card step">
+            <div class="step-number">2</div>
+            <div>
+                <h3>Heat</h3>
+                <p class="muted">Stovetop, oven, or microwave—follow the label on each dish.</p>
+            </div>
+            </div>
+            <div class="card step">
+            <div class="step-number">3</div>
+            <div>
+                <h3>Enjoy</h3>
+                <p class="muted">Finish with fresh herbs or citrus for a chef-style touch.</p>
+            </div>
+            </div>
+        </div>
+        <div class="step-link">
+            <a class="btn btn-ghost" href="/how">See the full process →</a>
+        </div>
+        </section>
 
-  <%- include("partials/footer") %>
+        <!-- Help -->
+        <section class="section panel">
+        <div class="cta">
+            <div>
+            <h2>Need help choosing?</h2>
+            <p class="section-lead">Tell us your preferences and we’ll draft a starter box for you.</p>
+            <div class="cta-actions">
+                <a class="btn btn-primary" href="/contact">Talk to us</a>
+                <a class="btn btn-ghost" href="/reviews">See customer favorites</a>
+            </div>
+            </div>
+            <div>
+            <img src="https://placehold.co/520x320/jpg" alt="Customer support" class="img-card" />
+            </div>
+        </div>
+        </section>
+    </main>
 
-  <script src="https://js.stripe.com/v3/"></script>
-  <script type="module" src="/scripts/order.js" defer></script>
+    <%- include("partials/footer") %>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script type="module" src="/scripts/order.js" defer></script>
 </body>
 </html>
