@@ -23,70 +23,101 @@
 
         <section class="section">
         <div class="section-header">
+            <h2>Search the menu</h2>
+            <p class="section-lead">Find dishes by name, description, or category.</p>
+        </div>
+        <div class="panel" style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+            <span style="padding:6px 10px; border-radius:999px; background: rgba(247,57,57,0.12); border:1px solid rgba(247,57,57,0.25); color: rgba(247,57,57,0.75); font-weight:700; letter-spacing:0.4px; text-transform:uppercase; font-size:0.8rem;">Beta</span>
+            <input id="menu-search" type="search" placeholder="Search meals..." style="flex:1; min-width:220px; padding:12px; border-radius:12px; border:1px solid var(--border); background: rgba(255,255,255,0.03); color: var(--text);" />
+            <span id="menu-search-count" class="muted" aria-live="polite"></span>
+        </div>
+        </section>
+
+        <% const menu = Array.isArray(data.menu) ? data.menu : []; %>
+        <% const mains = menu.filter(item => item.type === "main"); %>
+        <% const desserts = menu.filter(item => item.type === "dessert"); %>
+        <% const bundles = menu.filter(item => item.type === "bundle"); %>
+        <% const sides = menu.filter(item => item.type === "side"); %>
+
+        <section class="section" id="menu-results-section" style="display:none;">
+        <div class="section-header">
+            <h2>Results</h2>
+            <p class="section-lead">Matches across all categories.</p>
+        </div>
+        <div class="grid cols-3" id="menu-results-grid"></div>
+        </section>
+
+        <% if (mains.length) { %>
+        <section class="section" data-menu-section>
+        <div class="section-header">
             <h2>Signature Mains</h2>
             <p class="section-lead">Protein-forward entrées with balanced sides and sauces that reheat beautifully.</p>
         </div>
         <div class="grid cols-3">
-            <article class="card">
-            <img src="https://placehold.co/420x260/jpg" alt="Smoky chipotle chicken" />
-            <h3>Smoky Chipotle Chicken</h3>
-            <p class="muted">Charred corn, roasted sweet potatoes, lime crema.</p>
+            <% mains.forEach(item => { %>
+            <article class="card" data-search-card data-search-text="<%= item.name %> <%= item.description %>" data-search-type="main">
+            <img src="<%= item.image %>" alt="<%= item.name %>" />
+            <h3><%= item.name %></h3>
+            <p class="muted"><%= item.description %></p>
             </article>
-            <article class="card">
-            <img src="https://placehold.co/420x260/jpg" alt="Honey garlic salmon" />
-            <h3>Honey-Garlic Salmon</h3>
-            <p class="muted">Sesame greens, wild rice, citrus herb butter.</p>
-            </article>
-            <article class="card">
-            <img src="https://placehold.co/420x260/jpg" alt="Herb roasted turkey" />
-            <h3>Herb-Roasted Turkey</h3>
-            <p class="muted">Garlic mash, green beans, cranberry pan jus.</p>
-            </article>
+            <% }); %>
         </div>
         </section>
+        <% } %>
 
-        <section class="section">
+        <% if (desserts.length) { %>
+        <section class="section" data-menu-section>
         <div class="section-header">
-            <h2>Comfort Classics</h2>
+            <h2>Incredible Desserts</h2>
             <p class="section-lead">Cozy, freezer-friendly favorites with upgraded ingredients.</p>
         </div>
         <div class="grid cols-3">
-            <article class="card">
-            <img src="https://placehold.co/420x260/jpg" alt="Pesto pasta bake" />
-            <h3>Veggie Pesto Pasta Bake</h3>
-            <p class="muted">Zucchini, blistered tomatoes, mozzarella, basil pesto.</p>
+            <% desserts.forEach(item => { %>
+            <article class="card" data-search-card data-search-text="<%= item.name %> <%= item.description %>" data-search-type="dessert">
+            <img src="<%= item.image %>" alt="<%= item.name %>" />
+            <h3><%= item.name %></h3>
+            <p class="muted"><%= item.description %></p>
             </article>
-            <article class="card">
-            <img src="https://placehold.co/420x260/jpg" alt="Beef lasagna" />
-            <h3>Spinach & Beef Lasagna</h3>
-            <p class="muted">Slow-simmered ragu, ricotta layers, parmesan crisp top.</p>
-            </article>
-            <article class="card">
-            <img src="https://placehold.co/420x260/jpg" alt="Curry bowl" />
-            <h3>Coconut Curry Bowl</h3>
-            <p class="muted">Roasted veggies, jasmine rice, lemongrass coconut sauce.</p>
-            </article>
+            <% }); %>
         </div>
         </section>
+        <% } %>
 
-        <section class="section">
+        <% if (sides.length) { %>
+        <section class="section" data-menu-section>
+        <div class="section-header">
+            <h2>Flavorful Sides</h2>
+            <p class="section-lead">Perfect for sharing with friends and family.</p>
+        </div>
+        <div class="grid cols-3">
+            <% sides.forEach(item => { %>
+            <article class="card" data-search-card data-search-text="<%= item.name %> <%= item.description %>" data-search-type="side">
+            <img src="<%= item.image %>" alt="<%= item.name %>" />
+            <h3><%= item.name %></h3>
+            <p class="muted"><%= item.description %></p>
+            </article>
+            <% }); %>
+        </div>
+        </section>
+        <% } %>
+
+        <% if (bundles.length) { %>
+        <section class="section" data-menu-section>
         <div class="section-header">
             <h2>Family Bundles</h2>
             <p class="section-lead">Sized to share—great for busy nights and weekend resets.</p>
         </div>
         <div class="grid cols-2">
-            <article class="card">
-            <img src="https://placehold.co/520x320/png" alt="Family pasta bake" />
-            <h3>Family Pasta Bake</h3>
-            <p class="muted">Feeds 4–5. Comes with garlic bread and a crisp salad kit.</p>
+            <% bundles.forEach(item => { %>
+            <article class="card" data-search-card data-search-text="<%= item.name %> <%= item.description %>" data-search-type="bundle">
+            <img src="<%= item.image %>" alt="<%= item.name %>" />
+            <h3><%= item.name %></h3>
+            <p class="muted"><%= item.description %></p>
             </article>
-            <article class="card">
-            <img src="https://placehold.co/520x320/png" alt="Roast chicken bundle" />
-            <h3>Roast Chicken Bundle</h3>
-            <p class="muted">Feeds 4. Herb chicken, roasted veg medley, mashed potatoes, pan sauce.</p>
-            </article>
+            <% }); %>
         </div>
         </section>
+        <% } %>
 
         <section class="section">
         <div class="panel">
@@ -100,6 +131,60 @@
         </div>
         </section>
     </main>
+
+    <script>
+      (function () {
+        const input = document.getElementById("menu-search");
+        const cards = Array.from(document.querySelectorAll("[data-search-card]"));
+        const countEl = document.getElementById("menu-search-count");
+        const sections = Array.from(document.querySelectorAll("[data-menu-section]"));
+        const resultsSection = document.getElementById("menu-results-section");
+        const resultsGrid = document.getElementById("menu-results-grid");
+        const resultClones = [];
+
+        if (!input || cards.length === 0 || !resultsSection || !resultsGrid) return;
+
+        // Clone cards into the results grid once.
+        cards.forEach((card) => {
+          const clone = card.cloneNode(true);
+          resultClones.push(clone);
+          resultsGrid.appendChild(clone);
+        });
+
+        function showCategories(show) {
+          sections.forEach((sec) => {
+            sec.style.display = show ? "" : "none";
+          });
+          resultsSection.style.display = show ? "none" : "";
+        }
+
+        function applyFilter() {
+          const q = input.value.trim().toLowerCase();
+
+          if (!q) {
+            showCategories(true);
+            cards.forEach((card) => (card.style.display = ""));
+            if (countEl) countEl.textContent = `${cards.length} items`;
+            return;
+          }
+
+          showCategories(false);
+          let shown = 0;
+          resultClones.forEach((card) => {
+            const text = (card.dataset.searchText || card.textContent || "").toLowerCase();
+            const match = text.includes(q);
+            card.style.display = match ? "" : "none";
+            if (match) shown += 1;
+          });
+          if (countEl) {
+            countEl.textContent = `${shown} match${shown === 1 ? "" : "es"}`;
+          }
+        }
+
+        input.addEventListener("input", applyFilter);
+        applyFilter();
+      })();
+    </script>
 
     <%- include("partials/footer") %>
 </body>

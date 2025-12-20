@@ -68,32 +68,27 @@
         </div>
         </section>
 
+        <% const highlights = Array.isArray(data.menu) ? data.menu.slice(0, 3) : []; %>
+        <% if (highlights.length) { %>
         <section id="menu" class="section">
         <div class="section-header">
             <h2>Menu highlights</h2>
             <p class="section-lead">Balanced proteins, vibrant veggies, and cozy classics crafted for freezer-friendly freshness.</p>
         </div>
         <div class="grid cols-3">
+            <% highlights.forEach(item => { %>
             <article class="card">
-            <img src="https://placehold.co/420x260/jpg" alt="Meal highlight" />
-            <h3>Smoky Chipotle Chicken</h3>
-            <p class="muted">With roasted sweet potatoes, charred corn, and lime crema.</p>
+            <img src="<%= item.image %>" alt="<%= item.name %>" />
+            <h3><%= item.name %></h3>
+            <p class="muted"><%= item.description %></p>
             </article>
-            <article class="card">
-            <img src="https://placehold.co/420x260/jpg" alt="Meal highlight" />
-            <h3>Veggie Pesto Pasta Bake</h3>
-            <p class="muted">Basil pesto, roasted zucchini, blistered tomatoes, and mozzarella.</p>
-            </article>
-            <article class="card">
-            <img src="https://placehold.co/420x260/jpg" alt="Meal highlight" />
-            <h3>Honey-Garlic Salmon</h3>
-            <p class="muted">Served with sesame greens, wild rice, and citrus herb butter.</p>
-            </article>
+            <% }); %>
         </div>
         <div style="margin-top: 18px;">
             <a class="btn btn-ghost" href="/menu">See full menu →</a>
         </div>
         </section>
+        <% } %>
 
         <section class="section panel">
         <div class="cta">

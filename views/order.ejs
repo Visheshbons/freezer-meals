@@ -43,22 +43,19 @@
             <div class="step-card" data-step-panel="1">
             <div class="section-header tight">
                 <h3>Select your meals</h3>
-                <p class="section-lead">Add quantities to build your box (6–14 meals recommended).</p>
+                <p class="section-lead">Add quantities to build your box.</p>
+            </div>
+            <% const menuItems = Array.isArray(data.menu) ? data.menu : []; %>
+            <div class="panel" style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-bottom:12px;">
+                <input id="order-search" type="search" placeholder="Search meals..." style="flex:1; min-width:220px; padding:12px; border-radius:12px; border:1px solid var(--border); background: rgba(255,255,255,0.03); color: var(--text);" />
+                <span id="order-search-count" class="muted" aria-live="polite"></span>
             </div>
             <div class="grid cols-3" id="meal-grid">
-                <% const suggestedMeals = [
-                    { id: "chipotle-chicken", name: "Smoky Chipotle Chicken", desc: "Roasted sweet potatoes, charred corn, lime crema.", price: 12, img: "https://placehold.co/420x260/jpg" },
-                    { id: "pesto-bake", name: "Veggie Pesto Pasta Bake", desc: "Zucchini, blistered tomatoes, mozzarella, basil pesto.", price: 11, img: "https://placehold.co/420x260/jpg" },
-                    { id: "honey-salmon", name: "Honey-Garlic Salmon", desc: "Sesame greens, wild rice, citrus herb butter.", price: 13, img: "https://placehold.co/420x260/jpg" },
-                    { id: "butter-chicken", name: "Butter Chicken & Rice", desc: "Creamy tomato sauce, basmati, charred broccoli.", price: 12, img: "https://placehold.co/420x260/jpg" },
-                    { id: "lasagna", name: "Hearty Beef Lasagna", desc: "Slow-simmered sauce, ricotta, mozzarella.", price: 12, img: "https://placehold.co/420x260/jpg" },
-                    { id: "tofu-bowl", name: "Ginger Sesame Tofu Bowl", desc: "Brown rice, edamame, pickled veg, sesame glaze.", price: 11, img: "https://placehold.co/420x260/jpg" },
-                ]; %>
-                <% suggestedMeals.forEach(meal => { %>
-                <article class="card meal-card" data-meal-id="<%= meal.id %>" data-meal-price="<%= meal.price %>">
-                    <img src="<%= meal.img %>" alt="<%= meal.name %>" />
+                <% menuItems.forEach(meal => { %>
+                <article class="card meal-card" data-meal-id="<%= meal.id %>" data-meal-price="<%= meal.price %>" data-search-card data-search-text="<%= meal.name %> <%= meal.description %>">
+                    <img src="<%= meal.image %>" alt="<%= meal.name %>" />
                     <h4><%= meal.name %></h4>
-                    <p class="muted"><%= meal.desc %></p>
+                    <p class="muted"><%= meal.description %></p>
                     <div class="meal-card__footer">
                     <span class="price">$<%= meal.price %></span>
                     <div class="qty-controls" data-qty-controls>
@@ -169,25 +166,16 @@
             <h2>Popular picks</h2>
             <p class="section-lead">Add these customer favorites to your box.</p>
         </div>
+        <% const picks = menuItems.slice(0, 3); %>
         <div class="grid cols-3">
-            <article class="card">
-            <img src="https://placehold.co/420x260/jpg" alt="Smoky chipotle chicken" />
-            <h3>Smoky Chipotle Chicken</h3>
-            <p class="muted">Roasted sweet potatoes, charred corn, lime crema.</p>
-            <button type="button" class="btn btn-ghost" data-add-meal="chipotle-chicken">Add to box →</button>
+            <% picks.forEach(item => { %>
+            <article class="card" data-search-card data-search-text="<%= item.name %> <%= item.description %>">
+            <img src="<%= item.image %>" alt="<%= item.name %>" />
+            <h3><%= item.name %></h3>
+            <p class="muted"><%= item.description %></p>
+            <button type="button" class="btn btn-ghost" data-add-meal="<%= item.id %>">Add to box →</button>
             </article>
-            <article class="card">
-            <img src="https://placehold.co/420x260/jpg" alt="Pesto pasta bake" />
-            <h3>Veggie Pesto Pasta Bake</h3>
-            <p class="muted">Zucchini, blistered tomatoes, mozzarella, basil pesto.</p>
-            <button type="button" class="btn btn-ghost" data-add-meal="pesto-bake">Add to box →</button>
-            </article>
-            <article class="card">
-            <img src="https://placehold.co/420x260/jpg" alt="Honey garlic salmon" />
-            <h3>Honey-Garlic Salmon</h3>
-            <p class="muted">Sesame greens, wild rice, citrus herb butter.</p>
-            <button type="button" class="btn btn-ghost" data-add-meal="honey-salmon">Add to box →</button>
-            </article>
+            <% }); %>
         </div>
         </section>
 
@@ -264,6 +252,33 @@
         </div>
         </section>
     </main>
+
+    <script>
+      (function () {
+        const input = document.getElementById("order-search");
+        const cards = Array.from(document.querySelectorAll("[data-search-card]"));
+        const countEl = document.getElementById("order-search-count");
+
+        if (!input || cards.length === 0) return;
+
+        function applyFilter() {
+          const q = input.value.trim().toLowerCase();
+          let shown = 0;
+          cards.forEach((card) => {
+            const text = (card.dataset.searchText || "").toLowerCase();
+            const match = !q || text.includes(q);
+            card.style.display = match ? "" : "none";
+            if (match) shown += 1;
+          });
+          if (countEl) {
+            countEl.textContent = q ? `${shown} match${shown === 1 ? "" : "es"}` : `${shown} items`;
+          }
+        }
+
+        input.addEventListener("input", applyFilter);
+        applyFilter();
+      })();
+    </script>
 
     <%- include("partials/footer") %>
 
